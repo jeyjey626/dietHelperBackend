@@ -13,8 +13,8 @@ public interface ExamRepository extends JpaRepository<Exam, Long> {
 
     //Exam findByP atientAndOrOrderByDate(long id) throws ObjectNotFoundException;
 
+    List<Exam> findByPatientIdOrderByDateAsc(long patientId) throws ObjectNotFoundException;
     List<Exam> findByPatientId(long patientId) throws ObjectNotFoundException;
-
     //List<Exam> findByDateBetween(LocalDate start, LocalDate stop);
 
 }

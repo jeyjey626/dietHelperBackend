@@ -1,6 +1,7 @@
 package com.jmakulec.osm.demo.controller.patient;
 
 
+import com.jmakulec.osm.demo.dto.ExamShortDTO;
 import com.jmakulec.osm.demo.dto.PatientDetailDTO;
 import com.jmakulec.osm.demo.dto.PatientListDTO;
 import com.jmakulec.osm.demo.service.Patient.PatientService;
@@ -12,7 +13,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-
+@CrossOrigin
 public class PatientController {
 
     @Autowired

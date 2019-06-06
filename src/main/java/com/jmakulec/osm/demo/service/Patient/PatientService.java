@@ -51,7 +51,7 @@ public class PatientService {
     }
 
     public void deletePatient(long idPatient) throws ObjectNotFoundException{
-        List<Exam> list = examRepository.findByPatientId(idPatient);
+        List<Exam> list = examRepository.findByPatientIdOrderByDateAsc(idPatient);
         for (Exam alist:list) {
             examRepository.delete(alist);
         }
