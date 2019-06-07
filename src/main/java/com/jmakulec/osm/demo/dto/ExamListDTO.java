@@ -7,6 +7,7 @@ import lombok.Data;
 
 import java.text.DecimalFormat;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Data
 public class ExamListDTO {

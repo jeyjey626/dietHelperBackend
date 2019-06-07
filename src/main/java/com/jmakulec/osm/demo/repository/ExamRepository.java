@@ -4,10 +4,12 @@ import com.jmakulec.osm.demo.domain.Exam;
 import org.hibernate.ObjectNotFoundException;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.time.LocalDate;
 import java.util.List;
 
+@CrossOrigin
 @Repository
 public interface ExamRepository extends JpaRepository<Exam, Long> {
 
@@ -16,5 +18,4 @@ public interface ExamRepository extends JpaRepository<Exam, Long> {
     List<Exam> findByPatientIdOrderByDateAsc(long patientId) throws ObjectNotFoundException;
     List<Exam> findByPatientId(long patientId) throws ObjectNotFoundException;
     //List<Exam> findByDateBetween(LocalDate start, LocalDate stop);
-
 }
