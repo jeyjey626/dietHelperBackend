@@ -28,6 +28,16 @@ public class PatientController {
         return service.add(request);
     }
 
+    @PutMapping("/patients/edit/{id}")
+    public void update(@RequestBody PatientResponse request, @PathVariable Long id) throws  ObjectNotFoundException{
+         service.edit(request, id);
+    }
+
+    @PostMapping("/patients/delete/{id}")
+    public void remove(@PathVariable Long id) throws ObjectNotFoundException {
+        service.deletePatient(id);
+    }
+
     @GetMapping("patients/{id}")
     public PatientDetailDTO getOnePatient(@PathVariable Long id){ return service.getOnePatient(id).map(PatientDetailDTO::new).orElseThrow(NullPointerException::new);}
 
